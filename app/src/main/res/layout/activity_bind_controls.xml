@@ -13,8 +13,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="text"
-         />
+        android:hint="Enter Full Name"
+        android:inputType="text" />
 
     <EditText
         android:id="@+id/editTextTextUserEmail"
@@ -30,6 +30,26 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="User Details Will Appear Here" />
+
+    <RadioButton
+        android:id="@+id/radioButtonMale"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Male" />
+
+    <RadioGroup
+        android:id="@+id/RadioGroupGender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radioButtonFemale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Female" />
+    </RadioGroup>
 
     <Button
         android:id="@+id/btnUserSubmit"

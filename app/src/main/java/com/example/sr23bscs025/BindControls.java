@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,6 +19,8 @@ import androidx.core.view.WindowInsetsCompat;
 public class BindControls extends AppCompatActivity {
     EditText et_userName, et_userEmail;
     Button btn_sumbit;
+    RadioButton rb;
+    RadioGroup rg ;
     TextView tv_user;
 
     @SuppressLint("MissingInflatedId")
@@ -35,15 +39,24 @@ public class BindControls extends AppCompatActivity {
         et_userEmail=findViewById(R.id.editTextTextUserEmail);
         btn_sumbit = findViewById(R.id.btnUserSubmit);
         tv_user = findViewById(R.id.textViewUser);
+        rg=findViewById(R.id.RadioGroupGender);
+
 
     }
     public void fnDisplay(View view){
-        String name = et_userName.getText().toString();
-        String email =et_userEmail.getText().toString();
+        try {
+            int id = rg.getCheckedRadioButtonId();
+            rb = findViewById(id);
+            String name = et_userName.getText().toString();
+            String email =et_userEmail.getText().toString();
+            String gender = rb.getText().toString();
 
-        String result = "Name of the user is :"+name+"\nThis is the User email: "+email;
-        tv_user.setText(result);
-        Toast.makeText(this,"heyyyy",Toast.LENGTH_SHORT).show();
+            String result = "Name of the user is :"+name+"\nThis is the User email: "+email+"\n Gender:  "+gender;
+            tv_user.setText(result);
+            Toast.makeText(this,"heyyyy",Toast.LENGTH_SHORT).show();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }
