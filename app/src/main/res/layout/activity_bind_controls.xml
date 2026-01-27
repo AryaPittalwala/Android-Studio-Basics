@@ -59,5 +59,7 @@
         android:id="@+id/textViewUser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="User Details Will Appear Here" />
+        android:text="User Details Will Appear Here"
+        android:textColor="#E60F0F"
+        android:textSize="20sp" />
 </LinearLayout>

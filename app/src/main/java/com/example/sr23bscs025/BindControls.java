@@ -51,7 +51,7 @@ public class BindControls extends AppCompatActivity {
             String email =et_userEmail.getText().toString();
             String gender = rb.getText().toString();
 
-            String result = "Name of the user is :"+name+"\nThis is the User email: "+email+"\n Gender:  "+gender;
+            String result = "Name :"+name+"\nEmail: "+email+"\nGender:  "+gender;
             tv_user.setText(result);
             Toast.makeText(this,"heyyyy",Toast.LENGTH_SHORT).show();
         } catch (Exception e) {
