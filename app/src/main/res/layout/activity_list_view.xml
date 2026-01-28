@@ -20,7 +20,6 @@
         android:id="@+id/textView6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView"
         android:textColor="#EB1616"
         android:textFontWeight="20" />
 
@@ -40,6 +39,7 @@
             android:id="@+id/btnEdit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="fnEdit"
             android:text="Edit" />
 
     </LinearLayout>
@@ -47,5 +47,6 @@
     <ListView
         android:id="@+id/ListViewCity"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:drawSelectorOnTop="false" />
 </LinearLayout>

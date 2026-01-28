@@ -16,15 +16,15 @@
         android:inputType="text"
         android:text="To:" />
 
+
     <EditText
         android:id="@+id/editTextTextEmailAddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
         android:layout_weight="1"
+        android:ems="10"
         android:hint="message goes here...."
         android:inputType="textEmailAddress" />
-
 
     <TextView
         android:id="@+id/textView2"

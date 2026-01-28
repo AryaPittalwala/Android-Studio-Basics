@@ -3,6 +3,7 @@ package com.example.sr23bscs025;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,6 +20,7 @@ import java.util.ArrayList;
 
 public class ListVIew extends AppCompatActivity {
     ArrayList<String> city;
+    int index=0;
     EditText et_city;
     ListView lv_city;
     TextView tv_city;
@@ -43,6 +45,7 @@ public class ListVIew extends AppCompatActivity {
         add=findViewById(R.id.btnAdd);
 
         city=new ArrayList<>();
+
 //        city.add("Surat");
 //        city.add("Navsari");
         adp=new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,city);
@@ -68,5 +71,47 @@ public class ListVIew extends AppCompatActivity {
             }
         });
 
+        lv_city.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                et_city.setText(adp.getItem(position));
+                index=position;
+            }
+        });
+
+        lv_city.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                city.remove(position);
+                adp.notifyDataSetChanged();
+                tv_city.setText("DATA DELETED");
+                return false;
+            }
+        });
+
+
+
     }
+    public void fnEdit(View view){
+try {
+
+    String city1 ="";
+    city1=et_city.getText().toString();
+    if(city1.length()==0){
+        tv_city.setText("EMPTY DATA CANNOT BE INSERTED");
+    } else if (city.contains(city1)) {
+        tv_city.setText("DATA ALREADY EXISTS");
+    }
+    else{
+        city.set(index,city1);
+        adp.notifyDataSetChanged();
+        et_city.setText("");
+        tv_city.setText("DATA MODIFIED");
+    }
+} catch (Exception e) {
+    throw new RuntimeException(e);
+}
+    }
+
+
 }
