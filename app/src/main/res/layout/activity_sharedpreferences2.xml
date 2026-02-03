@@ -21,6 +21,24 @@
         android:hint="Age"
         android:inputType="text" />
 
+    <RadioGroup
+        android:id="@+id/ragdiogroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/radioButtonemail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="remove" />
+
+        <RadioButton
+            android:id="@+id/radioButtonclear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="clear" />
+    </RadioGroup>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -30,14 +48,15 @@
             android:id="@+id/button7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:forceDarkAllowed="true"
+            android:text="remove" />
 
         <Button
             android:id="@+id/button8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0"
-            android:text="Button" />
+            android:text="next" />
     </LinearLayout>
 
 </LinearLayout>
